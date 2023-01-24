@@ -2,7 +2,7 @@ import pygame
 import random
 end = False
 while not end:
- colour = input("What color? Green(g) or Multi-coloured(m): ")
+ colour = input("What color? Green(g) or Multi-coloured(m): ").lower()
  if colour =="g" or colour =="m":
     end = True
  else:
@@ -26,9 +26,9 @@ while 1:
         if event.type == pygame.QUIT:
             quit()
     x,y = main(x,y)
-    if colour.lower() == "g":
+    if colour == "g":
         fernColour = (0,255,0)
-    elif colour.lower() == "m":
+    elif colour == "m":
         fernColour = (random.randint(0,255),random.randint(0,255),random.randint(0,255))
     pygame.draw.circle(screen,(fernColour),(85*x+450,-57*y+750),1)
     pygame.display.flip()
